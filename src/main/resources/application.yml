@@ -6,4 +6,4 @@ spring:
     username: postgres
     password: postgres
   messages:
-    basename: message/messages
+    basename: message/messages, message/ValidationMessages
