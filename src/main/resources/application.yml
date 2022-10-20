@@ -5,3 +5,5 @@ spring:
     url: jdbc:postgresql://localhost:5432/EMS
     username: postgres
     password: postgres
+  messages:
+    basename: message/messages
