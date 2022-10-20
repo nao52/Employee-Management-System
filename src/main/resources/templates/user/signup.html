@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+
+<head>
+  <!-- 個別CSS -->
+  <link rel="stylesheet" th:href="@{/css/user/signup.css}">
+  <!-- 個別タイトル -->
+  <title>ユーザー登録</title>
+</head>
+
+<body class="bg-light">
+  <form id="signup-form" method="post" action="/user/signup" class="form-signup">
+    <h1 class="text-center">ユーザー登録</h1>
+    <!-- ユーザーID -->
+    <div class="form-group">
+      <label for="userId">ユーザーID</label>
+      <input id="userId" type="text" class="form-control">
+    </div>
+    <!-- パスワード -->
+    <div class="form-group">
+      <label for="password">パスワード</label>
+      <input id="password" type="password" class="form-control">
+    </div>
+    <!-- ユーザー名 -->
+    <div class="form-group">
+      <label for="userName">ユーザー名</label>
+      <input id="userName" type="text" class="form-control">
+    </div>
+    <!-- 誕生日 -->
+    <div class="form-group">
+      <label for="birthday">誕生日</label>
+      <input id="birthday" type="text" class="form-control">
+    </div>
+    <!-- 年齢 -->
+    <div class="form-group">
+      <label for="age">年齢</label>
+      <input id="age" type="text" class="form-control">
+    </div>
+    <!-- 性別 -->
+    <div class="form-group">
+      <div th:each="item : ${genderMap}" class="form-check-inline">
+        <input th:id="gender + ${item.value}" type="radio" name="gender" class="form-check-input" th:value="${item.value}">
+        <label th:for="gender + ${item.value}" class="form-check-label" th:text="${item.key}"></label>
+      </div>
+    </div>
+    <!-- 登録ボタン -->
+    <input type="submit" value="ユーザー登録" class="btn btn-primary w-100 mt-3">
+  </form>
+</body>
+
+</html>
