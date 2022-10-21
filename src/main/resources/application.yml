@@ -5,5 +5,16 @@ spring:
     url: jdbc:postgresql://localhost:5432/EMS
     username: postgres
     password: postgres
+# message
   messages:
     basename: message/messages, message/ValidationMessages
+# MyBatis
+mybatis:
+  mapper-locations: classpath*:mapper/postgres/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.domain
+# Log Level
+logging:
+  level: 
+    '[com.example]': debug
