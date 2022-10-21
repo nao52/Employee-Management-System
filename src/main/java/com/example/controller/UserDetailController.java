@@ -13,8 +13,11 @@ import com.example.domain.MUser;
 import com.example.form.UserDetailForm;
 import com.example.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserDetailController {
 
 	@Autowired
