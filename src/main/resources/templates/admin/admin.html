@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+
+<head>
+  <!-- 個別CSS -->
+  <link rel="stylesheet">
+  <!-- 個別タイトル -->
+  <title th:text="#{admin.title}"></title>
+</head>
+
+<body>
+  <div class="header border-bottom mt-2">
+    <h1 class="h2" th:text="#{admin.title} + '画面'"></h1>
+  </div>
+</body>
+
+</html>
