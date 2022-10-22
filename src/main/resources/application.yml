@@ -8,6 +8,9 @@ spring:
 # message
   messages:
     basename: message/messages, message/ValidationMessages
+# main
+  main:
+    allow-circular-references: true
 # MyBatis
 mybatis:
   mapper-locations: classpath*:mapper/postgres/*.xml

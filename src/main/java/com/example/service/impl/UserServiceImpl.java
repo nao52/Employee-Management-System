@@ -55,9 +55,16 @@ public class UserServiceImpl implements UserService {
 		mapper.updateOne(userId, encryptPassword, userName);
 	}
 
+	/** ユーザー削除 (1件) */
 	@Override
 	public void deleteUserOne(String userId) {
 		int count = mapper.deleteOne(userId);
+	}
+
+	/** ログインユーザー情報取得 */
+	@Override
+	public MUser getLoginUser(String userId) {
+		return mapper.findLoginUser(userId);
 	}
 
 }
