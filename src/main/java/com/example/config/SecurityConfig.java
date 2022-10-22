@@ -26,6 +26,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/error").permitAll()
 				.anyRequest().authenticated(); // それ以外は直リンクNG
 
+		// ログイン処理
+		http.formLogin().loginProcessingUrl("/login") // ログイン処理のパス
+				.loginPage("/login") // ログインページの指定
+				.failureUrl("/login?error") // ログイン失敗時の遷移先
+				.usernameParameter("userId") // ログインページのユーザーID
+				.passwordParameter("password") // ログインページのパスワード
+				.defaultSuccessUrl("/user/list", true); // 成功後の遷移先
+
 		// エラー処理の設定
 		http.exceptionHandling().accessDeniedPage("/error");
 
