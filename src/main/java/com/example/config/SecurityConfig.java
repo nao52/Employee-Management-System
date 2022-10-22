@@ -23,7 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// ログイン不要ページの設定
 		http.authorizeRequests().antMatchers("/login").permitAll() // 直リンクOK
 				.antMatchers("/user/signup").permitAll() // 直リンクOK
+				.antMatchers("/error").permitAll()
 				.anyRequest().authenticated(); // それ以外は直リンクNG
+
+		// エラー処理の設定
+		http.exceptionHandling().accessDeniedPage("/error");
 
 		// CSRF対策を無効に設定 (一時的)
 		http.csrf().disable();
