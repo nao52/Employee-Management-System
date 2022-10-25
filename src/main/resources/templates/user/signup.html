@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::head/script}, ~{::body/content()})}">
 
 <head>
   <!-- 個別CSS -->
   <link rel="stylesheet" th:href="@{/css/user/signup.css}">
+  <!-- 個別JS -->
+  <script th:src="@{/js/user/signup.js}" defer></script>
   <!-- 個別タイトル -->
   <title th:text="#{user.signup.title}"></title>
 </head>
@@ -56,9 +58,7 @@
     <input type="submit" th:value="#{user.signup.btn}" class="btn btn-primary w-100 mt-3">
     <button id="btn-signup" type="button" class="btn btn-primary w-100 mt-3" th:text="#{user.signup.btn.REST}"></button>
   </form>
-
-  <!-- JS読込 -->
-  <script th:src="@{/js/user/signup.js}" defer></script>
+  
 </body>
 
 </html>

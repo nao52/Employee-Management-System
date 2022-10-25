@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::head/script}, ~{::body/content()})}">
 
 <head>
   <!-- 個別CSS -->
   <link rel="stylesheet" th:href="@{/css/user/list.css}">
+  <!-- 個別JS -->
+  <script th:src="@{/js/user/detail.js}" defer></script>
   <!-- 個別タイトル -->
   <title th:text="#{user.detail.title}"></title>
 </head>
@@ -91,8 +93,6 @@
     </th:block>
   </form>
 
-  <!-- JS読込 -->
-  <script th:src="@{/js/user/detail.js}" defer></script>
 </body>
 
 </html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::head/script}, ~{::body/content()})}">
 
 <head>
   <!-- 個別CSS -->
   <link rel="stylesheet">
+  <!-- 個別JS -->
+  <script></script>
   <!-- 個別タイトル -->
   <title th:text="#{admin.title}"></title>
 </head>
