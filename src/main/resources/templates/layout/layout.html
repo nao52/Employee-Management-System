@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, link, body)">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, link, script, body)">
 
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,8 @@
   <!-- 共通JS読込 -->
   <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
   <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+  <!-- 個別JS読込 -->
+  <script th:replace="${script}"></script>
   <!-- 個別タイトル読込 -->
   <title th:replace="${title}"></title>
 </head>

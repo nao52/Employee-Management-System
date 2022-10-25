@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::body/content()})}">
+  th:replace="~{layout/layout::layout(~{::title}, ~{::head/link}, ~{::head/script}, ~{::body/content()})}">
 
 <head>
   <!-- 個別CSS -->
   <link rel="stylesheet" th:href="@{/css/user/list.css}">
+  <!-- 個別JS -->
+  <script th:src="@{/js/user/detail.js}" defer></script>
   <!-- 個別タイトル -->
   <title th:text="#{user.detail.title}"></title>
 </head>
@@ -62,6 +64,13 @@
       <!-- 更新ボタン -->
       <button class="btn btn-primary" type="submit" name="update" th:text="#{update}"></button>
     </div>
+    <!-- RESTボタンエリア -->
+    <div class="text-center mt-2">
+      <!-- 削除ボタン -->
+      <button id="btn-delete" class="btn btn-danger" type="button" th:text="#{delete.REST}"></button>
+      <!-- 更新ボタン -->
+      <button id="btn-update" class="btn btn-primary" type="button" th:text="#{update.REST}"></button>
+    </div>
     <!-- 給料情報 -->
     <th:block th:if="*{salaryList != null and salaryList.size() > 0}">
       <div class="header border-bottom">
@@ -83,6 +92,7 @@
       </table>
     </th:block>
   </form>
+
 </body>
 
 </html>
